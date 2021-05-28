@@ -2,15 +2,21 @@ import React, { Component } from 'react';
 import Gif from './gif.jsx';
 
 class GifList extends Component {
+
+  handleDisplay = (gifId) => {
+    this.props.display(gifId)
+  }
+
   renderList = () => {
-    return this.props.gifs.map(gif => <Gif id={gif.id} key={gif.id}/>
+    return this.props.gifs.map(gif =>
+        <Gif id={gif.id} key={gif.id} handleDisplay={this.handleDisplay}/>
     );
   }
   render() {
     return (
       <div className="gif-list">
         {this.renderList()}
-    </div>
+      </div>
     );
   }
 }

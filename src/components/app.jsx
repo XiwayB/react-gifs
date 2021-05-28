@@ -9,12 +9,15 @@ class App extends Component {
     super(props);
 
     this.state = {
-      gifs: [
-      {id: "lNByEO1uTbVAikv8oT"},
-      {id: "3ohzdIuqJoo8QdKlnW"}
-      ],
+      gifs: [],
       selectedGifId: "lNByEO1uTbVAikv8oT",
     }
+  }
+
+  display = (gifId) => {
+    this.setState({
+      selectedGifId: gifId
+    });
   }
 
   search = (query) => {
@@ -40,7 +43,7 @@ class App extends Component {
         </div>
 
         <div className="right-scene">
-          <GifList gifs={this.state.gifs}/>
+          <GifList gifs={this.state.gifs} display={this.display}/>
         </div>
       </div>
     )
