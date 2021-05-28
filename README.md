@@ -1,30 +1,19 @@
-# react-boilerplate
+# Overview
 
-Simple react starter with the following config:
+Simple first react application using the following configuration:
 
 - React, ReactDOM
-- Webpack 4
-- Babel with es2015 and react presets
+- Webpack
+- HTML 
 - Bootstrap (css only, loaded from a cdn in `index.html`)
-- work with `.js` or `.jsx` files
-- main `application.scss` stylesheet is imported in `index.js` as a module to enjoy hot reloading
+- Giphy-api npm to fetch gifs from Giphy
 
-## Scripts
+## Features 
 
-To start the local Webpack Dev Server (usually on port `8080`):
+- Search for a gif using key word
+- Click on a gif 
+- Go to the gif link on giphy
 
-```bash
-yarn start
-```
+## Screenshot 
 
-To lint all JavaScript files in the `src` folder:
-
-```bash
-yarn lint
-```
-
-To build and deploy your app to `gh-pages` branch on the GitHub repo:
-
-```bash
-yarn deploy
-```
+![Gif](https://res.cloudinary.com/xiway/image/upload/v1622200611/react-giphy_zdh3z6.gif)
