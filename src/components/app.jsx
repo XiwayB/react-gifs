@@ -10,7 +10,7 @@ class App extends Component {
 
     this.state = {
       gifs: [],
-      selectedGifId: "lNByEO1uTbVAikv8oT",
+      selectedGifId: "ZXf6dCfo4h9br1PMEQ",
     }
   }
 
@@ -24,7 +24,7 @@ class App extends Component {
     giphy("lRq6UiGNGKjEIQDT39Kds4sWFKL66s6Z").search({
       q: query,
       rating:'g',
-      limit: 10
+      limit: 20
     }, (err, res) => {
       this.setState({
         gifs: res.data
@@ -33,16 +33,20 @@ class App extends Component {
   }
 
   render () {
+    const src = `https://media1.giphy.com/media/${this.state.selectedGifId}/giphy.gif?cid=ecf05e47701040536bebedc31bb6df06369e170997904307&rid=giphy.gif&ct=g`
     return (
       <div>
         <div className="left-scene">
+          <div className="header">Find your Gif</div>
           <SearchBar search={this.search} />
           <div className="selected-gif">
             <Gif id={this.state.selectedGifId}/>
+            <a href={src} target="_blank">LINK</a>
           </div>
         </div>
 
         <div className="right-scene">
+          <div className="header">Results</div>
           <GifList gifs={this.state.gifs} display={this.display}/>
         </div>
       </div>

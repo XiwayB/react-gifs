@@ -1,6 +1,14 @@
 #root > div {
   display: flex;
   height: 100vh;
+  background-color: black;
+}
+
+.header {
+  text-align: center;
+  padding-top: 18px;
+  font-size: 40px;
+  color: white;
 }
 
 .left-scene {
@@ -10,24 +18,31 @@
   flex-direction: column;
 
   .form-search {
-    padding: 60px 60px 60px 120px;
+    margin: 26px 0px 47px 190px;
+    padding: 6px 352px 1px 21px;
     border: none;
-    font-size: 2.6em;
+    font-size: 1.6em;
     box-shadow: none;
     &:focus {
       box-shadow: none;
     }
   }
 
-  &:before {
-    content: "\F002";
-    position: absolute;
-    top: 35px;
-    left: 60px;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 2.6em;
-    opacity: 0.4;
+  .fa-search {
+    margin: 10px 10px 8px 13px;
+    padding: 5px;
+    font-size: 45px;
+    color: white;
+  }
+
+  .search {
+    background-image: linear-gradient(45deg, rgb(153, 51, 255) 0%, rgb(255, 102, 102) 50%, rgb(153, 51, 255) 100%);
+    margin: 26px 10px 47px 0px;
+  }
+
+
+  .searchBar {
+    display: flex;
   }
 
   .selected-gif {
@@ -35,19 +50,39 @@
     display: flex;
     flex-grow: 1;
     height: calc(100vh - 232px);
-    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.22'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-color: black;
 
-    .gif {
+    img {
       max-width: 50%;
       max-height: 50%;
-      margin: auto;
+      margin: 0px 0px 0px 333px;
     }
+  }
+}
+
+.selected-gif {
+  display: flex;
+
+  a {
+    margin: 329px 0px 231px -186px;
+    color: white;
+    padding: 12px 24px;
+    border: 0.5px white solid;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  a:hover{
+    text-decoration: none;
+    color:white;
+    background-image: linear-gradient(45deg, rgb(153, 51, 255) 0%, rgb(255, 102, 102) 50%, rgb(153, 51, 255) 100%);
+    border: none;
   }
 }
 
 .right-scene {
   flex: 0 0 40%;
-  background-color: #ecf0f1;
+  background-color: black;
   overflow: scroll;
 
   .gif-list {
@@ -55,7 +90,7 @@
     column-gap: 5px;
     padding: 5px;
 
-    .gif {
+    img {
       width: 100%;
       margin: 5px;
       cursor: pointer;
